@@ -346,7 +346,12 @@ function App() {
   const [currentTimeStr, setCurrentTimeStr] = useState("00:00 / 00:15");
 
   // --- BACKEND API STATE ---
-  const API_BASE = "http://localhost:5000/api";
+  // Auto-detect: localhost -> port 5000, production -> window.SHOPPULSE_API_URL or same origin /api
+  const API_BASE = window.SHOPPULSE_API_URL ||
+    (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+      ? 'http://localhost:5000/api'
+      : `${window.location.origin}/api`);
+
   const [apiTrends, setApiTrends] = useState([]);
   const [apiLoading, setApiLoading] = useState(true);
   const [apiError, setApiError] = useState(null);
