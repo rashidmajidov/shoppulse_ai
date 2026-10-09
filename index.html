@@ -53,8 +53,16 @@
   <!-- React Root Container -->
   <div id="root"></div>
 
+  <!-- API URL Config: Update SHOPPULSE_API_URL after Render deploy -->
+  <script>
+    // localhost-da bos saxlayin (auto-detect edir)
+    // Render deploy sonrasi: 'https://shoppulse-backend.onrender.com/api' yazin
+    window.SHOPPULSE_API_URL = '';
+  </script>
+
   <!-- Engines & Data (Zero dependencies, pure Web APIs) -->
   <script src="js/data.js"></script>
+
   <script src="js/audio.js"></script>
   <script src="js/video-engine.js"></script>
   <script src="js/image-engine.js"></script>
