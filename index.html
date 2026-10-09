@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="az" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopPulse AI - Trend-to-Ad Generator | Modern Bento Dashboard</title>
+  <meta name="description" content="TikTok, Instagram Reels, X və Reddit trendlərini analiz edərək sahibkarlar üçün avtomatik reklam videosu və şəkli yaradan müasir AI platforması.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+          },
+          colors: {
+            lime: {
+              400: '#a3e635',
+              500: '#84cc16',
+              accent: '#bbf444',
+            },
+            slate: {
+              850: '#131b2e',
+              900: '#0f172a',
+              950: '#080d1a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- React 18 & ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- Babel Standalone (Compiles JSX in-browser) -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Custom Base Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#FAFAFA] dark:bg-[#0B0F19] text-[#0F172A] dark:text-[#F8FAFC] antialiased">
+
+  <!-- React Root Container -->
+  <div id="root"></div>
+
+  <!-- Engines & Data (Zero dependencies, pure Web APIs) -->
+  <script src="js/data.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/video-engine.js"></script>
+  <script src="js/image-engine.js"></script>
+
+  <!-- React Main Application -->
+  <script type="text/babel" src="js/app.jsx"></script>
+</body>
+</html>

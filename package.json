@@ -1,0 +1,21 @@
+{
+  "name": "shoppulse-ai",
+  "version": "1.0.0",
+  "description": "Sahibkarlar üçün viral trendlərə əsaslanan avtomatik video və foto reklam generatoru",
+  "main": "index.html",
+  "scripts": {
+    "start": "python server.py",
+    "dev": "python server.py",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "shoppulse",
+    "viral-ad-generator",
+    "tiktok-trend",
+    "instagram-reels",
+    "reddit",
+    "ecommerce"
+  ],
+  "author": "",
+  "license": "MIT"
+}
