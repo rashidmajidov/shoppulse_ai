@@ -346,11 +346,20 @@ function App() {
   const [currentTimeStr, setCurrentTimeStr] = useState("00:00 / 00:15");
 
   // --- BACKEND API STATE ---
-  // Auto-detect: localhost -> port 5000, production -> window.SHOPPULSE_API_URL or same origin /api
-  const API_BASE = window.SHOPPULSE_API_URL ||
-    (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-      ? 'http://localhost:5000/api'
-      : `${window.location.origin}/api`);
+  // Auto-detect & normalize: window.SHOPPULSE_API_URL or localhost/origin fallback
+  const API_BASE = useMemo(() => {
+    let base = window.SHOPPULSE_API_URL;
+    if (!base) {
+      base = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+        ? 'http://localhost:5000/api'
+        : `${window.location.origin}/api`;
+    }
+    base = base.trim().replace(/\/+$/, '');
+    if (!base.endsWith('/api')) {
+      base += '/api';
+    }
+    return base;
+  }, []);
 
   const [apiTrends, setApiTrends] = useState([]);
   const [apiLoading, setApiLoading] = useState(true);
